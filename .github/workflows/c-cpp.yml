@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: init
-      run: ls
+    - name: checkout repo
+      uses: actions/checkout@main
     - name: make
-      run: make
+      run: make build
