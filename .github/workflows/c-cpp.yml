@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - name: init
-      run: git submodule init
-    - name: pull
-      run: git pull --recurse-submodules
+      run: cd ~
     - name: make
       run: make
