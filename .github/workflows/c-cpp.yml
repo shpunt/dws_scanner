@@ -12,5 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: init
+      run: git submodule init
+    - name: pull
+      run: git pull --recurse-submodules
     - name: make
       run: make
