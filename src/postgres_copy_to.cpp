@@ -41,7 +41,7 @@ void PostgresConnection::BeginCopyTo(ClientContext &context, PostgresCopyState &
 		}
 		query += ") ";
 	}
-	query += "FROM STDIN (FORMAT ";
+	query += "FROM STDIN ";
 	state.Initialize(context);
 	state.format = format;
 	switch (state.format) {
@@ -49,7 +49,7 @@ void PostgresConnection::BeginCopyTo(ClientContext &context, PostgresCopyState &
 		query += "BINARY";
 		break;
 	case PostgresCopyFormat::TEXT:
-		query += "TEXT, NULL '\b'";
+		query += "TEXT (NULL '\b')";
 		break;
 	default:
 		throw InternalException("Unsupported type for postgres copy format");
