@@ -13,6 +13,6 @@ jobs:
 
     steps:
     - name: init
-      run: cd ~
+      run: ls
     - name: make
       run: make
